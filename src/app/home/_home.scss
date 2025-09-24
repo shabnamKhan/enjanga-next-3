@@ -1,0 +1,122 @@
+// @use '@carbon/styles/scss/themes' as themes;
+// @use '@carbon/styles/scss/theme' as theme;
+// @use '@carbon/react/scss/colors' as colors;
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/breakpoint' as *;
+@use './../../styles/utils/mixins';
+
+/**
+ * TO DO:
+ --------
+  Find these design tokens and replace them in the code:
+  - #8f8793;
+ */
+
+.homePage {
+  // Variables ...
+  --enj-home-exprt-head-top: -80px;
+  --enj-home-exprt-tabs-top: -41px;
+
+  --enj-home-aboutSec-height: 730px;
+  --enj-home-aboutSec-title-top: -2rem;
+  --enj-home-section-title-mb: 0.25rem;
+  --enj-home-expertSec-intro-mg: 0 0 1rem 0;
+
+  .pageSection {
+    position: relative;
+    @include mixins.PSS-marginBottom-xxl;
+  }
+
+  // Custom tile found in many places all over the app
+  .home-customTile {
+    .enj-CustomTile-title {
+      margin: 0;
+    }
+  }
+
+  .sectionTitle {
+    margin-bottom: var(--enj-home-section-title-mb);
+
+    @include breakpoint('md') {
+      --enj-home-section-title-mb: 0.5rem;
+    }
+
+    @include breakpoint('lg') {
+      --enj-home-section-title-mb: 0.75rem;
+    }
+  }
+
+  .aboutSection {
+    background-color: #8f8793;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: var(--enj-home-aboutSec-height);
+
+    @include breakpoint('md') {
+      --enj-home-aboutSec-height: 540px;
+    }
+
+    @include breakpoint('lg') {
+      --enj-home-aboutSec-height: 620px;
+    }
+
+    @include breakpoint('xlg') {
+      --enj-home-aboutSec-height: 650px;
+    }
+
+    #about-me-heading {
+      position: absolute;
+      top: var(--enj-home-aboutSec-title-top);
+
+      @include breakpoint('md') {
+        --enj-home-aboutSec-title-top: -2.5rem;
+      }
+
+      @include breakpoint('lg') {
+        --enj-home-aboutSec-title-top: -3.2rem;
+      }
+
+      // @include breakpoint('xlg') {
+      // }
+    }
+  }
+
+  .section-expertises {
+    // Declarations ...
+    .sectionTitle,
+    .expertise-section-tabs {
+      position: absolute;
+    }
+
+    #scope-of-expertise-heading {
+      top: var(--enj-home-exprt-head-top);
+
+      @include breakpoint('md') {
+        --enj-home-exprt-head-top: -90px;
+      }
+
+      @include breakpoint('lg') {
+        --enj-home-exprt-head-top: -110px;
+      }
+
+      // @include breakpoint('xlg') {
+      // }
+    }
+
+    .expertise-section-tabs {
+      top: var(--enj-home-exprt-tabs-top);
+    }
+
+    .tab-content {
+      .intro-text {
+        margin: var(--enj-home-expertSec-intro-mg);
+
+        p {
+          font-size: 1.15rem;
+        }
+      }
+    }
+  }
+}

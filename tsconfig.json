@@ -1,0 +1,51 @@
+{
+  "compilerOptions": {
+    "types": ["node"], 
+    "target": "esnext",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "baseUrl": "./src",
+    "paths": {
+      "*": ["src/types/*"],
+      "@utils/*": ["utils/*"],
+      "@styles/*": ["styles/*"],
+      "enjanga-next-3-components-lib": [
+        "node_modules/enjanga-next-3-components-lib"
+      ],
+      "@/*": [
+        "./*"
+      ]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "allowJs": true,
+    "noEmit": true
+  },
+  "include": [
+    "src",
+    "src/types",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts", 
+    "next-env.d.ts",  
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

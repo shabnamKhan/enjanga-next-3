@@ -1,0 +1,50 @@
+@use '@carbon/styles/scss/themes' as themes;
+@use '@carbon/styles/scss/theme' as theme;
+// @use '@carbon/react/scss/colors' as colors;
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/breakpoint' as *;
+
+/**
+ * TO DO:
+ --------
+  Find these design tokens and replace them in the code:
+  - #00D5FF
+  - #fd88ff
+ */
+
+.section-expertises {
+  #scope-of-expertise-heading {
+    color: theme.$text-on-color;
+  }
+
+  .expertise-section-tabs {
+    // Increase all button's font size (for better readability)
+    button {
+      font-size: 1.1rem;
+    }
+
+    button.cds--tabs__nav-item--selected {
+      color: #00d5ff;
+      -webkit-border-after: 2px solid var(--cds-border-interactive, #00d5ff);
+      border-block-end: 2px solid var(--cds-border-interactive, #00d5ff);
+
+      .cds--tabs__nav-item--icon svg {
+        color: #00d5ff;
+      }
+    }
+
+    button.cds--tabs__nav-item:not(.cds--tabs__nav-item--selected) {
+      color: theme.$text-on-color;
+
+      &:hover {
+        color: #fd88ff !important;
+        -webkit-border-after: 2px solid var(--cds-border-interactive, #fd88ff) !important;
+        border-block-end: 2px solid var(--cds-border-interactive, #fd88ff) !important;
+
+        .cds--tabs__nav-item--icon svg {
+          color: #fd88ff;
+        }
+      }
+    }
+  }
+}
